@@ -1,25 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Typography } from '@mui/material';
+import { ConditionBuilder } from './components/condition-builder';
+import { ConditionContextProvider } from './contexts/condition-contexts';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ p: 8, maxWidth: '1200px', mx: 'auto' }}>
+      <Typography variant="h3" gutterBottom>
+        Condition Builder
+      </Typography>
+      <ConditionContextProvider>
+        <ConditionBuilder />
+      </ConditionContextProvider>
+    </Box>
   );
 }
 
