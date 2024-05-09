@@ -25,7 +25,7 @@ export function ConditionBuilder() {
       .then((data) => {
         if (isArray(data)) {
           setRecords(data);
-          setGridColumns(Object.keys(data[0]).map((key) => ({ field: key })));
+          setGridColumns(Object.keys(data[0]).map((key) => ({ field: key, resizable: true })));
           setColumns(Object.keys(data[0]));
         } else {
           setRecords([]);
